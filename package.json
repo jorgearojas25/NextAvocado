@@ -1,28 +1,39 @@
 {
-  "name": "nextavocado",
-  "version": "1.0.0",
+  "version": "0.1.0",
+  "name": "next-avocado",
+  "author": "Jorge Rojas",
+  "private": true,
   "description": "",
   "main": "index.js",
+  "license": "MIT",
   "scripts": {
     "dev": "next",
     "build": "next build",
-    "start": "next build",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "start": "next start",
+    "type-check": "tsc --noEmit"
   },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/jorgearojas25/NextAvocado.git"
-  },
-  "keywords": [],
-  "author": "",
-  "license": "ISC",
-  "bugs": {
-    "url": "https://github.com/jorgearojas25/NextAvocado/issues"
-  },
-  "homepage": "https://github.com/jorgearojas25/NextAvocado#readme",
   "dependencies": {
-    "next": "^13.0.5",
-    "react": "^18.2.0",
-    "react-dom": "^18.2.0"
+    "next": "^9.4.2",
+    "react": "^16.13.1",
+    "react-dom": "^16.13.1"
+  },
+  "devDependencies": {
+    "@types/node": "^14.0.5",
+    "@types/react": "^16.9.35",
+    "husky": "^4.2.5",
+    "prettier": "^2.0.5",
+    "pretty-quick": "^2.0.1",
+    "typescript": "^3.9.3"
+  },
+  "prettier": {
+    "trailingComma": "es5",
+    "tabWidth": 2,
+    "semi": false,
+    "singleQuote": true
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "pretty-quick --staged && yarn type-check"
+    }
   }
 }
