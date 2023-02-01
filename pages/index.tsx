@@ -3,9 +3,8 @@ import fetch from 'isomorphic-unfetch'
 import Layout from '@components/Layout/Layout'
 import KawaiiHeader from '@components/KawaiiHeader/KawaiiHeader'
 import ProductList from '@components/ProductList/ProductList'
-import { GetServerSideProps } from 'next'
 
-export const getServerSideProps = async () => {
+export const getStaticProps = async () => {
   const response = await fetch('https://next-avocado-nd6q.vercel.app/api/avo')
   const { data: productList }: TAPIAvoResponse = await response.json()
 
